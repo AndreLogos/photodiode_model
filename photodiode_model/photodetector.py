@@ -13,18 +13,20 @@ class Photodiode():
         reverse_voltage (float): Operational Reverse voltage.
         __characteristics (list): Characteristics curves from the datasheet.
     """
-    def __init__(self, efective_area : float, reverse_voltage : float):
+    def __init__(self, efective_area:float, reverse_voltage:float, sensitivity:float):
         """
         Constructs the basics attributes of a Photodiode.
 
         Parameters:
             efective_area (float):  Radiant sensitive area (in mm2).
             reverse_voltage (float): Operational Reverse voltage.
+            sensitivity (float): Typical sensitivity (nA/lx).
 
         Also creates an empty list of Photodiode characteristics curves of its datasheet. The characteristics curves are Dictionaries with: Name, X axis data and Y axis data.
         """
         self.efective_area = efective_area
         self.reverse_voltage = reverse_voltage
+        self.sensitivity = sensitivity
         self.__characteristics = []
 
     def add_char(self, name : str, x_axis : np.ndarray, y_axis : np.ndarray):
